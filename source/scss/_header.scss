@@ -1,3 +1,110 @@
 header {
+  min-height: 1170px;
+  position: relative;
+  background-color: #bdebfb;
+  @include background-image(linear-gradient(to bottom, #bdebfb 0%, #bdebfb 76%, #fdfdff 100%));
 
+  .header__logo {
+    width: 338px; height: 192px;
+    display: inline-block;
+    position: relative;
+    float: left;
+    left: -50px; top: 0;
+    @include background-image-retina('../i/logo', 'png', 338px, 192px);
+    background-repeat: no-repeat;
+  }
+
+  nav {
+    display: inline-block;
+    float: left;
+    margin-top: 50px;
+    margin-left: -15px;
+
+    ul {
+      li {
+        float: left;
+        margin-right: 15px;
+        a {
+          height: 33px;
+          line-height: 33px;
+          display: block;
+          padding: 0 23px;
+          @include border-radius(16px);
+          @include background-clip(padding-box);
+          background-color: #fff;
+          @include box-shadow(0 1px 0 rgba(181,210,130,.75));
+          @include background-image(linear-gradient(to bottom, #f4f7f0 0%, #fff 100%));
+
+          color: #58830e;
+          font-size: 14px;
+          text-decoration: none;
+
+          &:hover {
+            color: #58830e;
+            @include background-image(linear-gradient(to bottom, #fff 0%, #f4f7f0 100%));
+          }
+          &:active {
+            @include box-shadow(0 -1px 0 rgba(181,210,130,.75));
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .header__phone {
+    display: inline-block;
+    float: left;
+    margin-top: 52px;
+    margin-left: 20px;
+
+    h1 {
+      color: #000;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .icon-phone {
+      color: #80c30b;
+      position: relative;
+      top: 3vpx;
+      margin-right: 11px;
+    }
+  }
+
+  .header__bg {
+    position: absolute;
+    top: 80px; left: 0;
+    width: 100%; height: 100%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    //z-index: 2;
+
+    &.header__bg--1 {
+      background-image: url(../i/bg-1.png);
+    }
+    &.header__bg--2 {
+      background-image: url(../i/bg-2.png);
+    }
+  }
+
+  .header__questions {
+    @include col(6/12);
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    @include text-shadow(0 1px 0 #bdebfb);
+  }
+
+  .header__slogan {
+    @include col(5/12, $offset: 1/12);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    margin-top: -16px;
+    @include text-shadow(0 1px 0 #bdebfb);
+    font-weight: 300;
+  }
 }

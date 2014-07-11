@@ -7,6 +7,23 @@
   :-ms-input-placeholder      {@content}
 };
 
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+    & {
+      background-image: url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+    }
+  }
+}
+
+// Example
+// #foo {
+//   @include background-image-retina('foobar', 'png', 10px, 20px);
+//   background: repeat;
+// }
+
 // libs
 @import "photoshop-drop-shadow";
 @import "compass/css3";
@@ -38,11 +55,12 @@
 }
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	background: $bg-color;
 	line-height: 150%;
 	font-size: $text-size;
-
+  font-size: 16px;
+  color: #006797;
 	min-width: 960px;
 }
 
@@ -62,7 +80,7 @@ a[href^=tel]{
 }
 
 h1, h2, h3, h4, h5, p {
-	color: #000;
+	color: #006797;
 	margin-bottom: 18px;
 }
 
@@ -103,9 +121,9 @@ a, input, textarea, .btn {
 }
 
 a {
-	color: #000;
+	color: #006797;
 	&:hover {
-		color: lighten(#000, 20%);
+		color: lighten(#006797, 20%);
 	}
 }
 
