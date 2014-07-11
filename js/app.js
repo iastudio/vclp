@@ -1,5 +1,10 @@
 
 (function(){
+
+  $.stellar({
+    horizontalScrolling: false
+  });
+
 })();
 
 	/////////////////
