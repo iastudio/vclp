@@ -6,7 +6,6 @@
     <title>ВладЧудо</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" type="image/png" href="i/favicon.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="i/icons/apple-touch-icon-144x144-precomposed.png">
@@ -27,7 +26,7 @@
     <script src="js/vendor/selectivizr-1.0.3b.js"></script>
     <link rel="stylesheet" href="css/ie.css">
     <![endif]-->
-    <script src="js/vendor/modernizr.js"></script><script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
     <div class="page-wrap">
@@ -37,9 +36,9 @@
         <div class="container"><a href="/" class="header__logo"></a>
           <nav>
             <ul>
-              <li><a href="#">Тесты</a></li>
-              <li><a href="#">Отзывы</a></li>
-              <li><a href="#">Запись online</a></li>
+              <li><a href="#test" data-scroll>Тесты</a></li>
+              <li><a href="#testimonials" data-scroll>Отзывы</a></li>
+              <li><a href="#contacts" data-scroll>Запись online</a></li>
             </ul>
           </nav>
           <div class="header__phone">
@@ -108,27 +107,74 @@
           </div>
         </div>
       </section>
-      <section class="section-2">
+      <section id="test" class="section-2">
         <div class="container center">
           <h1>Пройти тестирование</h1>
         </div>
-        <div class="container"><a href="#" class="col-1-6 test"><i class="icon-whoohooh"></i>
-            <h5>Машина<br>времени</h5><small>Пройти тест</small></a><a href="#" class="col-1-6 test"><i class="icon-love"></i>
-            <h5>Надо подумать</h5><small>Пройти тест</small></a><a href="#" class="col-1-6 test"><i class="icon-highfive"></i>
-            <h5>Чего я жду<br>от будущего</h5><small>Пройти тест</small></a><a href="#" class="col-1-6 test"><i class="icon-school"></i>
-            <h5>Что я думаю<br>об этом</h5><small>Пройти тест</small></a><a href="#" class="col-1-6 test"><i class="icon-runner"></i>
-            <h5>Как я действую</h5><small>Пройти тест</small></a><a href="#" class="col-1-6 test"><i class="icon-dzen"></i>
+        <div class="container"><a href="https://rudoy.typeform.com/to/gZsGtv" data-mode="1" target="_blank" class="typeform-share col-1-6 test"><i class="icon-whoohooh"></i>
+            <h5>Машина<br>времени</h5><small>Пройти тест</small></a><a href="https://rudoy.typeform.com/to/bfUDlH" data-mode="1" target="_blank" class="typeform-share col-1-6 test"><i class="icon-love"></i>
+            <h5>Надо подумать</h5><small>Пройти тест</small></a><a href="https://rudoy.typeform.com/to/bJwEpA" data-mode="1" target="_blank" class="typeform-share col-1-6 test"><i class="icon-highfive"></i>
+            <h5>Чего я жду<br>от будущего</h5><small>Пройти тест</small></a><a href="https://rudoy.typeform.com/to/vxKjXU" data-mode="1" target="_blank" class="typeform-share col-1-6 test"><i class="icon-school"></i>
+            <h5>Что я думаю<br>об этом</h5><small>Пройти тест</small></a><a href="https://rudoy.typeform.com/to/O4bAW6" data-mode="1" target="_blank" class="typeform-share col-1-6 test"><i class="icon-runner"></i>
+            <h5>Как я действую</h5><small>Пройти тест</small></a><a href="https://rudoy.typeform.com/to/FwSMxT" data-mode="1" target="_blank" class="typeform-share col-1-6 test"><i class="icon-dzen"></i>
             <h5>Как я живу</h5><small>Пройти тест</small></a></div>
       </section>
-      <section class="section-3">
+      <section id="testimonials" class="section-3">
         <div class="container center">
           <h1>Отзывы</h1>
         </div>
         <div class="container">
-          <div class="slider"></div>
+          <div class="carousel">
+            <div class="carousel__container">
+              <ul>
+                <li class="carousel__item"><a href="#"><img src="i/placeholders/placeholder-1.jpg" width="140" height="140">
+                    <h5>Кушнаренко Ирина</h5>
+                    <p>Для тех, кому интересно искать и находить. Быть исследователем собственной жизни. Здесь мы будем общаться, и  находить пути решения вместе.</p><a href="#" class="btn">Читать полностью</a></a></li>
+                <li class="carousel__item"><a href="#"><img src="i/placeholders/placeholder-2.jpg" width="140" height="140">
+                    <h5>Кушнаренко Ирина</h5>
+                    <p>Для тех, кому интересно искать и находить. Быть исследователем собственной жизни. Здесь мы будем общаться, и  находить пути решения вместе.</p><a href="#" class="btn">Читать полностью</a></a></li>
+                <li class="carousel__item"><a href="#"><img src="i/placeholders/placeholder-3.jpg" width="140" height="140">
+                    <h5>Кушнаренко Ирина</h5>
+                    <p>Для тех, кому интересно искать и находить. Быть исследователем собственной жизни. Здесь мы будем общаться, и  находить пути решения вместе.</p><a href="#" class="btn">Читать полностью</a></a></li>
+                <li class="carousel__item"><a href="#"><img src="i/placeholders/placeholder-1.jpg" width="140" height="140">
+                    <h5>Кушнаренко Ирина</h5>
+                    <p>Для тех, кому интересно искать и находить. Быть исследователем собственной жизни. Здесь мы будем общаться, и  находить пути решения вместе.</p><a href="#" class="btn">Читать полностью</a></a></li>
+                <li class="carousel__item"><a href="#"><img src="i/placeholders/placeholder-2.jpg" width="140" height="140">
+                    <h5>Кушнаренко Ирина</h5>
+                    <p>Для тех, кому интересно искать и находить. Быть исследователем собственной жизни. Здесь мы будем общаться, и  находить пути решения вместе.</p><a href="#" class="btn">Читать полностью</a></a></li>
+                <li class="carousel__item"><a href="#"><img src="i/placeholders/placeholder-3.jpg" width="140" height="140">
+                    <h5>Кушнаренко Ирина</h5>
+                    <p>Для тех, кому интересно искать и находить. Быть исследователем собственной жизни. Здесь мы будем общаться, и  находить пути решения вместе.</p><a href="#" class="btn">Читать полностью</a></a></li>
+              </ul>
+            </div><a href="#" class="carousel__nav carousel__nav--prev"><i class="icon-arr-left"></i></a><a href="#" class="carousel__nav carousel__nav--next"><i class="icon-arr-right"></i></a>
+          </div>
         </div>
       </section>
-      <footer></footer>
+      <section id="contacts" class="section-4">
+        <div data-stellar-background-ratio="0.8" data-stellar-vertical-offset="700" class="section__bg section__bg--1"></div>
+        <div data-stellar-background-ratio="0.5" data-stellar-vertical-offset="700" class="section__bg section__bg--2"></div>
+        <div class="container">
+          <div class="contacts__form">
+            <h1>Обратная связь</h1>
+            <form data-title="main-form">
+              <input type="text" name="name" placeholder="Имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="mail" placeholder="Почта" required>
+              <input type="submit" value="Записаться">
+            </form>
+          </div>
+          <div class="contacts__footer">
+            <h5>Ваш личный психолог:</h5>
+            <h1>+7 (908) 993-25-41</h1>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="footer__copy">&copy; 2014. Все права защищены.</div>
+          <div class="footer__madeby">Разработка сайта – Студия «<a href="http://iastudio.ru" target="_blank">Интерактив</a>»</div>
+        </div>
+      </footer>
     </div>
     <!--[if (!IE)|(gt IE 8)]><!-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -138,6 +184,9 @@
     <![endif]-->
     <script src="js/vendor/jquery.placeholder.js"></script>
     <script src="js/vendor/jquery.stellar.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.easing.1.3.js"></script>
+    <script src="js/vendor/smooth-scroll.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

@@ -1,4 +1,16 @@
 footer {
 
+  color: #006797;
+  font-family: "Open Sans", sans-serif;
+  padding: 32px 0;
+  border-top: 5px solid #CEF7FF;
+
+  .footer__copy {
+    @include col(7/12);
+  }
+  .footer__madeby {
+    @include col(5/12);
+    text-align: right;
+  }
 }
 
