@@ -1,36 +1,67 @@
 
+
 var data = {};
 $(function() {
 
-  /////////////////
-  //   TypeForm  //
-  /////////////////
+  //////////////
+  //   Modal  //
+  //////////////
 
-  (function() {
-    var link, node, insertAt, body;
-    var doc = document;
-    var write = doc.getElementById;
-    var test = doc.createElement;
-    var d = doc.getElementsByTagName;
-    var url = "typef_orm";
-    var path = "https://s3-eu-west-1.amazonaws.com/share.typeform.com/";
-    if (!write.call(doc, url)) {
-      node = test.call(doc, "script");
-      node.id = url;
-      node.src = path + "share.js";
-      insertAt = d.call(doc, "script")[0];
-      insertAt.parentNode.insertBefore(node, insertAt);
-    }
-    url = url + "_";
-    if (!write.call(doc, url)) {
-      link = test.call(doc, "link");
-      link.rel = "stylesheet";
-      link.id = url;
-      link.href = path + "share-button.css";
-      body = d.call(doc, "head")[0];
-      body.appendChild(link, body);
-    }
-  })();
+  var preloaderHTML = ' \
+        <ul class="clouds"> \
+          <li class="cloud"></li> \
+          <li class="cloud"></li> \
+          <li class="cloud"></li> \
+          <li class="cloud"></li> \
+          <li class="cloud"></li> \
+        </ul> \
+        ';
+
+  $.modal.defaults = {
+    overlay: "#FFF",        // Overlay color
+    opacity: 0.8,          // Overlay opacity
+    zIndex: 5,              // Overlay z-index.
+    escapeClose: true,      // Allows the user to close the modal by pressing `ESC`
+    clickClose: true,       // Allows the user to close the modal by clicking the overlay
+    closeText: '',     // Text content for the close <a> tag.
+    closeClass: '',         // Add additional class(es) to the close <a> tag.
+    showClose: true,        // Shows a (X) icon/link in the top-right corner
+    modalClass: "modal",    // CSS class added to the element being displayed in the modal.
+    spinnerHtml: preloaderHTML,      // HTML appended to the default spinner during AJAX requests.
+    showSpinner: true,      // Enable/disable the default spinner during AJAX requests.
+    fadeDuration: 200,     // Number of milliseconds the fade transition takes (null means no transition)
+    fadeDelay: 1.0          // Point during the overlay's fade-in that the modal begins to fade in (.5 = 50%, 1.5 = 150%, etc.)
+  };
+
+  // /////////////////
+  // //   TypeForm  //
+  // /////////////////
+
+  // (function() {
+  //   var link, node, insertAt, body;
+  //   var doc = document;
+  //   var write = doc.getElementById;
+  //   var test = doc.createElement;
+  //   var d = doc.getElementsByTagName;
+  //   var url = "typef_orm";
+  //   var path = "https://s3-eu-west-1.amazonaws.com/share.typeform.com/";
+  //   if (!write.call(doc, url)) {
+  //     node = test.call(doc, "script");
+  //     node.id = url;
+  //     node.src = path + "share.js";
+  //     insertAt = d.call(doc, "script")[0];
+  //     insertAt.parentNode.insertBefore(node, insertAt);
+  //   }
+  //   url = url + "_";
+  //   if (!write.call(doc, url)) {
+  //     link = test.call(doc, "link");
+  //     link.rel = "stylesheet";
+  //     link.id = url;
+  //     link.href = path + "share-button.css";
+  //     body = d.call(doc, "head")[0];
+  //     body.appendChild(link, body);
+  //   }
+  // })();
 
   /////////////////
   //   PARALLAX  //
