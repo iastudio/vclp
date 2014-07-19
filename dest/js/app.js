@@ -1,6 +1,6 @@
 
-
 var data = {};
+
 $(function() {
 
   //////////////
@@ -32,36 +32,6 @@ $(function() {
     fadeDuration: 200,     // Number of milliseconds the fade transition takes (null means no transition)
     fadeDelay: 1.0          // Point during the overlay's fade-in that the modal begins to fade in (.5 = 50%, 1.5 = 150%, etc.)
   };
-
-  // /////////////////
-  // //   TypeForm  //
-  // /////////////////
-
-  // (function() {
-  //   var link, node, insertAt, body;
-  //   var doc = document;
-  //   var write = doc.getElementById;
-  //   var test = doc.createElement;
-  //   var d = doc.getElementsByTagName;
-  //   var url = "typef_orm";
-  //   var path = "https://s3-eu-west-1.amazonaws.com/share.typeform.com/";
-  //   if (!write.call(doc, url)) {
-  //     node = test.call(doc, "script");
-  //     node.id = url;
-  //     node.src = path + "share.js";
-  //     insertAt = d.call(doc, "script")[0];
-  //     insertAt.parentNode.insertBefore(node, insertAt);
-  //   }
-  //   url = url + "_";
-  //   if (!write.call(doc, url)) {
-  //     link = test.call(doc, "link");
-  //     link.rel = "stylesheet";
-  //     link.id = url;
-  //     link.href = path + "share-button.css";
-  //     body = d.call(doc, "head")[0];
-  //     body.appendChild(link, body);
-  //   }
-  // })();
 
   /////////////////
   //   PARALLAX  //
@@ -207,22 +177,20 @@ $(function() {
 
   	var isError = false;
 
-  	// $.ajax({
-  	//   type: "POST",
-  	//   url: "/mailer.php",
-  	//   data: JSON.stringify(data),
-  	//   contentType: "application/json; charset=utf-8",
-   //      success: function (data) {
-   //      	preloader.find('div').html(okHTML);
-   //        if ( console && console.log ) {
-   //          console.log( "Sample of data:", data.slice( 0, 100 ) );
-   //        }
-   //      },
-   //      error: function (data) {
-   //      	isError = true;
-   //      	preloader.find('div').html(errorHTML);
-   //      }
-  	// });
+  	$.ajax({
+  	  type: "POST",
+  	  url: "/mailer.php",
+  	  //data: JSON.stringify(data),
+      data: "data="+JSON.stringify(data),
+  	  //contentType: "application/json; charset=utf-8",
+      success: function (data) {
+      	preloader.find('div').html(okHTML);
+      },
+      error: function (data) {
+      	isError = true;
+      	preloader.find('div').html(errorHTML);
+      }
+  	});
 
   	$('.form-preloader').on('click', function() {
 

@@ -1,33 +1,19 @@
 <?php
-if (is_ajax()) {
-  if (isset($_POST["secret"])) {
-  // if (isset($_POST["secret"]) && $_POST["secret"] == "2f7d9f0d0acf89a8f6a57d79f0f7d475") {
+  // Скрипт посвещается Роману, который уехал в Турцию.
+  $json = $_POST[data];
+  $arr = (array)(json_decode($json));
+  if($arr["secret"] == "2f7d9f0d0acf89a8f6a57d79f0f7d475")
+  {
+    $email = "gufic@mail.ru";
+    $subject = "Сообщение с сайта ВладЧудо";
+    $header = "Content-type: text/html; charset=utf-8; \r\n";
 
-    echo '{"success":"true","message":"Message sent successfully to ' . $_POST["secret"] . '."}';
+    $message = "Новое сообщение с сайта ВладЧудо<br>" .
+    "<b>Имя: </b>" . $arr["name"] . "<br>" .
+    "<b>Телефон: </b>" . $arr["phone"] . "<br>" .
+    "<b>E-mail: </b>" . $arr["mail"];
 
-
-    // $action = $_POST["action"];
-    // switch($action) {
-    //   case "test": test_function(); break;
-    // }
+    $send = mail($email, $subject, $message, $header);
+    echo ( $send ? "All ok" : "Error" );
   }
-}
-
-//Function to check if the request is an AJAX request
-function is_ajax() {
-  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
-}
-
-function test_function(){
-  $return = $_POST;
-
-  //Do what you need to do with the info. The following are some examples.
-  //if ($return["favorite_beverage"] == ""){
-  //  $return["favorite_beverage"] = "Coke";
-  //}
-  //$return["favorite_restaurant"] = "McDonald's";
-
-  $return["json"] = json_encode($return);
-  echo json_encode($return);
-}
 ?>
