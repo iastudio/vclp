@@ -48,14 +48,18 @@ $(function() {
   var carouselSlideSpeed = 800;
   var carouselEasing = 'easeInOutCubic';
 
-  $('.carousel').each(function(){
-    var $carousel = $(this);
-    $carousel.find('ul li:last-child').prependTo( $carousel.find('ul') );
-    var itemCount = $carousel.find('.carousel__item').length;
-    var itemWidth = $carousel.find('.carousel__item').eq(0).outerWidth() + 10;
-    var totalWidth = itemCount * itemWidth;
-    $carousel.find('ul').css({ width: totalWidth, marginLeft: - itemWidth });
-  });
+  if ( $('.carousel .carousel__item').length > 3 ) {
+    $('.carousel').each(function(){
+      var $carousel = $(this);
+      $carousel.find('ul li:last-child').prependTo( $carousel.find('ul') );
+      var itemCount = $carousel.find('.carousel__item').length;
+      var itemWidth = $carousel.find('.carousel__item').eq(0).outerWidth() + 10;
+      var totalWidth = itemCount * itemWidth;
+      $carousel.find('ul').css({ width: totalWidth, marginLeft: - itemWidth });
+    });
+  } else {
+    $('.carousel__nav').hide();
+  }
 
   $('.carousel__nav').on('click', function(e) {
 
